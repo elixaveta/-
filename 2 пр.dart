@@ -1,5 +1,5 @@
 void main() {
-  // Исходные данные: студенты, предметы и оценки
+
   List<String> students = ["Лера", "Маша", "Саша", "Никита", "Ваня", "Кирилл"];
   List<String> subjects = ["Математика", "Физика", "Информатика", "Литература", "Физра"];
 
@@ -18,11 +18,11 @@ void main() {
   print("АНАЛИТИКА УСПЕВАЕМОСТИ ГРУППЫ");
   print("=" * 60);
 
-  // 1. Категории студентов по среднему баллу
+  // 1
   print("\n1. КАТЕГОРИИ СТУДЕНТОВ ПО СРЕДНЕМУ БАЛЛУ:");
-  List<String> excellent = []; // отличники (средний >= 4.5)
-  List<String> good = [];      // хорошисты (3.5 <= средний < 4.5)
-  List<String> others = [];    // остальные (средний < 3.5)
+  List<String> excellent = []; // отличники 
+  List<String> good = [];      // хорошисты 
+  List<String> others = [];    // остальные 
 
   for (int i = 0; i < students.length; i++) {
     double avgGrade = 0;
@@ -44,7 +44,7 @@ void main() {
   print("Хорошисты (3.5 <= средний < 4.5): ${good.isNotEmpty ? good.join(', ') : 'нет'}");
   print("Остальные (средний < 3.5): ${others.isNotEmpty ? others.join(', ') : 'нет'}");
 
-  // 2. Статистика по оценкам
+  // 2
   print("\n2. СТАТИСТИКА ОЦЕНОК:");
   Map<int, int> gradeCounts = {2: 0, 3: 0, 4: 0, 5: 0};
   for (var studentGrades in grades) {
@@ -57,7 +57,7 @@ void main() {
     print("Оценка $grade: ${gradeCounts[grade]} раз(а)");
   }
 
-  // 3. Для каждого предмета список студентов с пятёрками
+  // 3
   print("\n3. СТУДЕНТЫ С ПЯТЁРКАМИ ПО ПРЕДМЕТАМ:");
   for (int j = 0; j < subjects.length; j++) {
     List<String> studentsWith5 = [];
@@ -69,7 +69,7 @@ void main() {
     print("${subjects[j]}: ${studentsWith5.isNotEmpty ? studentsWith5.join(', ') : 'нет'}");
   }
 
-  // 4. Предметы, по которым нет ни одной двойки
+  // 4
   print("\n4. ПРЕДМЕТЫ БЕЗ ДВОЕК:");
   List<String> subjectsWithout2 = [];
   for (int j = 0; j < subjects.length; j++) {
@@ -93,7 +93,7 @@ void main() {
     print("Нет предметов без двоек");
   }
 
-  // 5. Предмет с наибольшим количеством двоек
+  // 5
   print("\n5. ПРЕДМЕТ С НАИБОЛЬШИМ КОЛИЧЕСТВОМ ДВОЕК:");
   List<MapEntry<String, int>> subject2Counts = [];
   for (int j = 0; j < subjects.length; j++) {
@@ -124,7 +124,7 @@ void main() {
     }
   }
 
-  // 6. Студент(ы) с наибольшим количеством пятёрок
+  // 6
   print("\n6. СТУДЕНТ(Ы) С НАИБОЛЬШИМ КОЛИЧЕСТВОМ ПЯТЁРОК:");
   List<MapEntry<String, int>> student5Counts = [];
   for (int i = 0; i < students.length; i++) {
@@ -150,7 +150,7 @@ void main() {
     print("${entry.key}: ${entry.value} пятёрок");
   }
 
-  // 7. Для каждого студента предметы с оценкой ниже 4
+  // 7
   print("\n7. ПРЕДМЕТЫ С ОЦЕНКОЙ НИЖЕ 4 (ДЛЯ КАЖДОГО СТУДЕНТА):");
   for (int i = 0; i < students.length; i++) {
     List<String> lowGradeSubjects = [];
@@ -167,7 +167,7 @@ void main() {
     }
   }
 
-  // 8. Все пары "студент — предмет" с оценкой 5
+  // 8
   print("\n8. ВСЕ ПАРЫ 'СТУДЕНТ — ПРЕДМЕТ' С ОЦЕНКОЙ 5:");
   List<String> pairsWith5 = [];
   for (int i = 0; i < students.length; i++) {
